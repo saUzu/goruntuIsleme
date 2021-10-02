@@ -1,0 +1,14 @@
+clc;
+clear;
+YUZLER=imread('yuzler.png');
+YUZ=imread('yuz11.png');
+figure,imshow(YUZLER),title('Aranacak Resim');
+%figure,imshow(YUZ),title('Aranan Resim');
+TEMPLATE=im2bw(YUZ);
+YUZLER2=im2bw(YUZLER);
+%figure,imshow(YUZLER2),title('Aranacak Resim Bw');
+%figure,imshow(YUZ2),title('Aranan Resim Bw');
+R=imerode(YUZLER2,TEMPLATE);
+%figure,imshow(R),title('R');
+R2=imdilate(R,TEMPLATE);
+figure,imshow(R2),title('R2');
